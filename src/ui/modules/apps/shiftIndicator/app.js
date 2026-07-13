@@ -44,10 +44,10 @@ angular.module('beamng.apps')
                         return;
                     }
 
-                    if (rpm > UPSHIFT_RPM && gear >= 1 && wheelSpeed > MIN_SPEED_MS) {
+                    if (rpm > UPSHIFT_RPM && gear >= 1 && wheelSpeed > MIN_SPEED_MS && gear !== topGear) {
                         scope.svgStyle1 = '';
                         scope.svgStyle2 = 'opacity: 0.2; filter: grayscale(100%);';
-                    } else if (rpm < DOWNSHIFT_RPM && gear > 1 && gear !== topGear) {
+                    } else if (rpm < DOWNSHIFT_RPM && gear > 1) {
                         scope.svgStyle1 = 'opacity: 0.2; filter: grayscale(100%);';
                         scope.svgStyle2 = '';
                     } else {
