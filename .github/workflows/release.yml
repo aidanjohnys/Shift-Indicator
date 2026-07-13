@@ -25,4 +25,4 @@ jobs:
       - name: Upload ZIP to Release
         uses: softprops/action-gh-release@v2
         with:
-          files: release.zip
+          files: ShiftIndicator.zip
