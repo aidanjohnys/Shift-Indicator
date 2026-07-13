@@ -1,0 +1,28 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Create ZIP
+        run: |
+          cd src
+          zip -r ../release.zip .
+
+      - name: Upload ZIP to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release.zip
