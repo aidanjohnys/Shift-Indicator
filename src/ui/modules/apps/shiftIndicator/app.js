@@ -1,4 +1,4 @@
-const UPSHIFT_RPM = 2800;
+const UPSHIFT_RPM = 2500;
 const DOWNSHIFT_RPM = 1500;
 const MIN_SPEED_MS = 3;
 
